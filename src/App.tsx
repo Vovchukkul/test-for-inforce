@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.scss';
 import {
   HashRouter as Router, Routes, Route,

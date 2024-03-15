@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Size } from '../types/Size';
 import './ProductCard.scss';
+import { Deletemodal } from './Deletemodal';
 
 type Props = {
   id: number,
@@ -20,9 +22,19 @@ export const ProductCard: React.FC<Props> = ({
   weight,
   deleteProduct,
 }) => {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handleClick = () => {
+    setIsPressed(true);
+  };
+
+  const handleReset = () => {
+    setIsPressed(false);
+  };
+
   return (
     <div className="productcard">
-      <img src={imageUrl} alt={name} />
+      <img src={imageUrl} alt={name} className='imagecard' />
       <h3>{name}</h3>
       <div className="productcard-info">
         <div className="productcard-info-item">
@@ -39,7 +51,8 @@ export const ProductCard: React.FC<Props> = ({
           <span>{weight}</span>
         </div>
       </div>
-      <div className="icon-close" onClick={() => deleteProduct(id)} />
+      <div className="icon-close" onClick={handleClick} />
+      {isPressed && <Deletemodal id={id} handleReset={handleReset} deleteProduct={deleteProduct} />}
     </div>
   );
 };

@@ -24,7 +24,8 @@ export const MainPage: React.FC<Props> = ({ products, setProducts }) => {
   const addProduct = async (product: Product) => {
     try {
       await client.post<Product>('/products', product);
-      setProducts(prevProducts => [...prevProducts, product]);
+      const updatedProducts = await client.get<Product[]>('/products');
+      setProducts(updatedProducts);
     } catch (error) {
       console.error('Error adding product:', error);
     }
@@ -33,18 +34,20 @@ export const MainPage: React.FC<Props> = ({ products, setProducts }) => {
   const deleteProduct = async (productId: number) => {
     try {
       await client.delete(`/products/${productId}`);
-      setProducts(prevProducts => prevProducts.filter(product => product.id !== productId));
+      const updatedProducts = await client.get<Product[]>('/products');
+      setProducts(updatedProducts);
+      localStorage.setItem('products', JSON.stringify(updatedProducts));
     } catch (error) {
       console.error('Error deleting product:', error);
     }
-  };
+};
 
 
   return (
     <div className="mainpage">
       <h1 className="mainpage__title">Product List</h1>
       <button className="mainpage__addProduct" onClick={() => handleModalOpen()}>ADD</button>
-      {isModalOpen && <Modal handleCloseModal={handleCloseModal} addProduct={addProduct} />}
+      {isModalOpen && <Modal handleCloseModal={handleCloseModal} addProduct={addProduct} products={products} />}
       <ProductList products={products} setProducts={setProducts} deleteProduct={deleteProduct} />
     </div>
   );

@@ -1,13 +1,15 @@
 .productlist {
-  width: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .productlist__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 30px;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Spacing between product cards */
+  justify-items: center; /* Center align items */
 }

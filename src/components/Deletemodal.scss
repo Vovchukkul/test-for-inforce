@@ -1,5 +1,5 @@
-.modal-overlay {
-  position: fixed;
+.deletemodal-overlay {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,32 +11,32 @@
   align-items: center;
 }
 
-.modal {
+.deletemodal {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   padding: 20px;
 }
 
-.modal__form {
+.deletemodal__form {
   display: flex;
   flex-direction: column;
 }
 
-.modal__input {
+.deletemodal__input {
   margin-bottom: 10px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.modal__buttons {
+.deletemodal__buttons {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 }
 
-.modal__button {
+.deletemodal__button {
   padding: 8px 16px;
   margin-left: 10px;
   border: none;
@@ -47,6 +47,6 @@
   transition: background-color 0.3s;
 }
 
-.modal__button:hover {
+.deletemodal__button:hover {
   background-color: #0056b3;
 }
