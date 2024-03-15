@@ -6,9 +6,10 @@ import {
 import { MainPage } from './pages/MainPage';
 import { Product } from './types/Product';
 import { getProducts } from './api';
+import { useLocalStorage } from './utils/useLocalStorage';
 
 export const App = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useLocalStorage<Product[]>('products', []);
 
   useEffect(() => {
     async function fetchData() {
@@ -23,7 +24,7 @@ export const App = () => {
     }
 
     fetchData();
-  }, []);
+  }, [setProducts]);
 
   return (
     <Router>

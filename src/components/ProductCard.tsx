@@ -8,6 +8,7 @@ type Props = {
   count: number,
   size?: Size,
   weight: string,
+  deleteProduct: (productId: number) => Promise<void>,
 };
 
 export const ProductCard: React.FC<Props> = ({
@@ -17,6 +18,7 @@ export const ProductCard: React.FC<Props> = ({
   count,
   size,
   weight,
+  deleteProduct,
 }) => {
   return (
     <div className="productcard">
@@ -37,6 +39,7 @@ export const ProductCard: React.FC<Props> = ({
           <span>{weight}</span>
         </div>
       </div>
+      <div className="icon-close" onClick={() => deleteProduct(id)} />
     </div>
   );
 };

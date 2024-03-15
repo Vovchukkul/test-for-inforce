@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "4",
       "imageUrl": "some url",
       "name": "Product name",
       "count": 4,
@@ -10,43 +10,32 @@
         "height": 200
       },
       "weight": "200g",
-      "comments": ["CommentModel", "CommentModel"]
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
     },
     {
-      "id": 2,
-      "imageUrl": "some url",
-      "name": "Product name",
-      "count": 4,
+      "id": 0.26840195939322253,
+      "imageUrl": "wtertwert",
+      "name": "wertwert",
+      "count": 2435,
       "size": {
-        "width": 200,
-        "height": 200
+        "width": null,
+        "height": null
       },
-      "weight": "200g",
-      "comments": ["CommentModel", "CommentModel"]
+      "weight": "243524"
     },
     {
-      "id": 3,
-      "imageUrl": "some url",
-      "name": "Product name",
-      "count": 4,
+      "id": 0.14544722616751637,
+      "imageUrl": "asdg",
+      "name": "asdg",
+      "count": null,
       "size": {
-        "width": 200,
-        "height": 200
+        "width": null,
+        "height": null
       },
-      "weight": "200g",
-      "comments": ["CommentModel", "CommentModel"]
-    },
-    {
-      "id": 4,
-      "imageUrl": "some url",
-      "name": "Product name",
-      "count": 4,
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "weight": "200g",
-      "comments": ["CommentModel", "CommentModel"]
+      "weight": "4235"
     }
   ]
 }
