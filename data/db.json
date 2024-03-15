@@ -1,17 +1,6 @@
 {
   "products": [
     {
-      "id": "2",
-      "imageUrl": "https://i.imgur.com/GbhGIhc.png",
-      "name": "wertwe",
-      "count": 2346,
-      "size": {
-        "width": 464,
-        "height": 345
-      },
-      "weight": "3246"
-    },
-    {
       "id": "21",
       "imageUrl": "https://i.imgur.com/GbhGIhc.png",
       "name": "adg",
